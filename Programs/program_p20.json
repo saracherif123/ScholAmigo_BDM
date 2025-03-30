@@ -1,0 +1,10 @@
+{
+    "url": "https://cosi-master.eu/",
+    "pages": [
+        {
+            "url": "https://cosi-master.eu/",
+            "html": "<!DOCTYPE html>\n<html lang=\"en\">\n <head>\n  <meta charset=\"utf-8\"/>\n  <link href=\"./favicon.png\" rel=\"icon\"/>\n  <link href=\"favicon.png\" rel=\"icon\"/>\n  <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\"/>\n  <link href=\"https://fonts.googleapis.com\" rel=\"preconnect\"/>\n  <link crossorigin=\"\" href=\"https://fonts.gstatic.com\" rel=\"preconnect\"/>\n  <link href=\"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,400&amp;family=Roboto:ital,wght@0,400;0,700;1,400&amp;display=swap\" rel=\"stylesheet\"/>\n  <!-- <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@animxyz/core\"> -->\n  <meta content=\"\" http-equiv=\"content-security-policy\"/>\n  <link href=\"/_app/immutable/start-9472973b.js\" rel=\"modulepreload\"/>\n  <link href=\"/_app/immutable/chunks/index-cd28e4b7.js\" rel=\"modulepreload\"/>\n  <link href=\"/_app/immutable/chunks/index-c71654cb.js\" rel=\"modulepreload\"/>\n  <!-- <title>COSI - Master degree in Applied Colour Science.</title> -->\n  <!-- <meta name=\"description\" content=\"Become a leading expert in colour science! The COSI master programme is a Erasmus Mundus + Joint Master Degree. A 2-year Master degree in Applied Colour Science, brought to you by 4 European leading universities. The master is designed and operated by a unique world leading university-business cooperation of 4 European universities, many academic partners and industrial leaders across the globe.\"> -->\n </head>\n <body>\n  <div>\n   <script data-sveltekit-hydrate=\"45h\" type=\"module\">\n    import { start } from \"/_app/immutable/start-9472973b.js\";\n\t\tstart({\n\t\t\ttarget: document.querySelector('[data-sveltekit-hydrate=\"45h\"]').parentNode,\n\t\t\tpaths: {\"base\":\"\",\"assets\":\"\"},\n\t\t\tsession: {},\n\t\t\troute: true,\n\t\t\tspa: true,\n\t\t\ttrailing_slash: \"never\",\n\t\t\thydrate: null\n\t\t});\n   </script>\n  </div>\n </body>\n</html>\n"
+        }
+    ],
+    "titles": []
+}
