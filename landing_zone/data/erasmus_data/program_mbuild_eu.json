@@ -1,0 +1,10 @@
+{
+    "url": "http://www.mbuild.eu/",
+    "pages": [
+        {
+            "url": "http://www.mbuild.eu/",
+            "html": "<html>\n <body>\n  <script>\n   window.location='http://www.up.pt/mbuild/web/'\n  </script>\n </body>\n</html>\n"
+        }
+    ],
+    "titles": []
+}

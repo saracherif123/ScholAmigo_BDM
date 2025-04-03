@@ -1,0 +1,10 @@
+{
+    "url": "http://www.beinprecisionmedicine.org/",
+    "pages": [
+        {
+            "url": "http://www.beinprecisionmedicine.org/",
+            "html": "<html>\n <head>\n  <title>\n   Loading...\n  </title>\n </head>\n <body>\n  <script type=\"text/javascript\">\n   window.location.replace('http://www.beinprecisionmedicine.org/?ch=1&js=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJKb2tlbiIsImV4cCI6MTc0MzcyOTQ2NCwiaWF0IjoxNzQzNzIyMjY0LCJpc3MiOiJKb2tlbiIsImpzIjoxLCJqdGkiOiIzMHBmNGE5c24yajh0YWRqbmMzNjEzMGQiLCJuYmYiOjE3NDM3MjIyNjQsInRzIjoxNzQzNzIyMjY0NjcyMDI1fQ.Mkda6zMJBWUQ0RdHFBVF6InsaOgnYfvJUhc-JFlr2dM&sid=d93b3dbf-10e1-11f0-b697-13ec0fb33d95');\n  </script>\n </body>\n</html>\n"
+        }
+    ],
+    "titles": []
+}
