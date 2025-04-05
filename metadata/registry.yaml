@@ -1,0 +1,30 @@
+sources:
+  - name: Erasmus Scholarships
+    collector: erasmus_collector.ipynb
+    type: HTML/JSON
+    path: landing_zone/data/erasmus_data
+
+  - name: Resumes
+    collector: resume_collector.ipynb
+    type: PDF
+    path: landing_zone/data/resume_data
+
+  - name: UK Scholarships
+    collector: uk_collector.ipynb
+    type: HTML/JSON
+    path: landing_zone/data/uk_data
+
+  - name: LinkedIn Profiles
+    collector: LinkedinProfiles_collector.ipynb
+    type: JSON
+    path: landing_zone/data/erasmus_linkedin_profiles
+
+  - name: Scholarship Programs
+    collector: scholarship_collector.ipynb
+    type: JSON
+    path: landing_zone/data/scholarship_data
+
+  - name: User Profiles
+    collector: users_collector.ipynb
+    type: JSONL
+    path: landing_zone/data/users_data

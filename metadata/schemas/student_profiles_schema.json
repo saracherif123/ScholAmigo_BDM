@@ -1,0 +1,13 @@
+{
+  "Name": "string",
+  "Age": "integer",
+  "Sex": "string",
+  "Major": "string",
+  "Year": "string",
+  "GPA": "number",
+  "Hobbies": "string",
+  "Country": "string",
+  "State/Province": "string",
+  "Unique Quality": "string",
+  "Story": "string"
+}
