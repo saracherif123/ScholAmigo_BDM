@@ -9,7 +9,7 @@ COLLECTORS = [
     "erasmus_collector.py",
     "resume_collector.py",
     "uk_collector.py",
-    "linkedin_collector.py",
+    "LinkedinProfiles_collector.py",
     "scholarship_collector.py",
     "users_collector.py",
 ]
@@ -27,7 +27,6 @@ def run_collector(script_name):
         os.system(f"python3 {script_path}")
     return _run
 
-# Upload everything in the data folder to S3
 def upload_to_s3():
     s3 = boto3.client("s3")
     for root, _, files in os.walk(DATA_DIR):
@@ -35,8 +34,23 @@ def upload_to_s3():
             local_path = os.path.join(root, file)
             rel_path = os.path.relpath(local_path, DATA_DIR)
             s3_key = f"{S3_PREFIX}{rel_path}"
-            s3.upload_file(local_path, S3_BUCKET, s3_key)
-            print(f"✅ Uploaded: {s3_key}")
+
+            # Extract a source name from the path (e.g., resume_data)
+            source = rel_path.split(os.sep)[0]
+
+            # Upload with metadata
+            s3.upload_file(
+                local_path,
+                S3_BUCKET,
+                s3_key,
+                ExtraArgs={
+                    'Metadata': {
+                        'source': source,
+                        'upload-timestamp': datetime.utcnow().isoformat()
+                    }
+                }
+            )
+            print(f"✅ Uploaded with metadata: {s3_key}")
 
 # DAG definition
 with DAG(
