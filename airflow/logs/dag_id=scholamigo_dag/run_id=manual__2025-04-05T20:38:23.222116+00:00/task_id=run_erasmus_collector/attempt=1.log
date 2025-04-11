@@ -1,0 +1,10 @@
+[2025-04-05T20:38:24.267+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-05T20:38:23.222116+00:00 [queued]>
+[2025-04-05T20:38:24.270+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-05T20:38:23.222116+00:00 [queued]>
+[2025-04-05T20:38:24.270+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-05T20:38:24.274+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_erasmus_collector> on 2025-04-05 20:38:23.222116+00:00
+[2025-04-05T20:38:24.276+0000] {standard_task_runner.py:60} INFO - Started process 857 to run task
+[2025-04-05T20:38:24.278+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'scholamigo_dag', 'run_erasmus_collector', 'manual__2025-04-05T20:38:23.222116+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/scholamigo.py', '--cfg-path', '/tmp/tmpx0x0em_t']
+[2025-04-05T20:38:24.279+0000] {standard_task_runner.py:88} INFO - Job 9: Subtask run_erasmus_collector
+[2025-04-05T20:38:24.299+0000] {task_command.py:423} INFO - Running <TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-05T20:38:23.222116+00:00 [running]> on host 1c326272b88d
+[2025-04-05T20:38:24.323+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scholamigo_dag' AIRFLOW_CTX_TASK_ID='run_erasmus_collector' AIRFLOW_CTX_EXECUTION_DATE='2025-04-05T20:38:23.222116+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-05T20:38:23.222116+00:00'
+[2025-04-05T20:38:24.324+0000] {logging_mixin.py:188} INFO - 🚀 Running: /opt/***/landing_zone/collectors/erasmus_collector.py
