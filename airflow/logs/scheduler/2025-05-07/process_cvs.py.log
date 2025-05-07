@@ -1,0 +1,95 @@
+[2025-05-07T18:16:22.571+0000] {processor.py:161} INFO - Started process (PID=38) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:16:22.574+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:16:22.575+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:22.575+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:16:22.598+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:16:22.731+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:22.731+0000] {override.py:1769} INFO - Created Permission View: can read on DAG:cv_processing_pipeline
+[2025-05-07T18:16:22.735+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:22.735+0000] {override.py:1769} INFO - Created Permission View: can delete on DAG:cv_processing_pipeline
+[2025-05-07T18:16:22.738+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:22.738+0000] {override.py:1769} INFO - Created Permission View: can edit on DAG:cv_processing_pipeline
+[2025-05-07T18:16:22.739+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:22.739+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:16:22.744+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:22.744+0000] {dag.py:3058} INFO - Creating ORM DAG for cv_processing_pipeline
+[2025-05-07T18:16:22.750+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:22.750+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:16:22.759+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.190 seconds
+[2025-05-07T18:16:53.045+0000] {processor.py:161} INFO - Started process (PID=101) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:16:53.045+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:16:53.047+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:53.047+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:16:53.052+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:16:53.063+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:53.062+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:16:53.072+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:16:53.072+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:16:53.079+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.036 seconds
+[2025-05-07T18:17:23.313+0000] {processor.py:161} INFO - Started process (PID=158) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:17:23.314+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:17:23.316+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:17:23.316+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:17:23.322+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:17:23.333+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:17:23.333+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:17:23.343+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:17:23.343+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:17:23.350+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.041 seconds
+[2025-05-07T18:17:53.842+0000] {processor.py:161} INFO - Started process (PID=215) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:17:53.843+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:17:53.845+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:17:53.845+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:17:53.851+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:17:53.866+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:17:53.866+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:17:53.878+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:17:53.878+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:17:53.886+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.048 seconds
+[2025-05-07T18:18:24.365+0000] {processor.py:161} INFO - Started process (PID=271) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:18:24.366+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:18:24.367+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:18:24.367+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:18:24.374+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:18:24.385+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:18:24.385+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:18:24.395+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:18:24.395+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:18:24.402+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.040 seconds
+[2025-05-07T18:18:54.785+0000] {processor.py:161} INFO - Started process (PID=327) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:18:54.785+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:18:54.787+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:18:54.787+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:18:54.792+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:18:54.808+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:18:54.808+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:18:54.820+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:18:54.819+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:18:54.832+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.051 seconds
+[2025-05-07T18:19:25.281+0000] {processor.py:161} INFO - Started process (PID=384) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:19:25.282+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:19:25.284+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:19:25.284+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:19:25.293+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:19:25.310+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:19:25.310+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:19:25.319+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:19:25.319+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:19:25.328+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.050 seconds
+[2025-05-07T18:19:55.816+0000] {processor.py:161} INFO - Started process (PID=440) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:19:55.818+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:19:55.820+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:19:55.820+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:19:55.825+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:19:55.838+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:19:55.838+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:19:55.847+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:19:55.847+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:19:55.855+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.042 seconds
+[2025-05-07T18:20:26.431+0000] {processor.py:161} INFO - Started process (PID=497) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:20:26.432+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:20:26.434+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:20:26.434+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:20:26.438+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:20:26.453+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:20:26.453+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:20:26.467+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:20:26.467+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:20:26.476+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.049 seconds
+[2025-05-07T18:20:56.953+0000] {processor.py:161} INFO - Started process (PID=554) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:20:56.955+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:20:56.957+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:20:56.957+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:20:56.967+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:20:56.980+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:20:56.979+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:20:56.991+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:20:56.990+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to 2025-04-30 22:00:00+00:00, run_after=2025-04-30 22:00:00+00:00
+[2025-05-07T18:20:56.999+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.049 seconds
+[2025-05-07T18:21:27.697+0000] {processor.py:161} INFO - Started process (PID=611) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:21:27.701+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:21:27.702+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:21:27.702+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:21:27.708+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:21:27.724+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:21:27.724+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:21:27.736+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:21:27.736+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to None, run_after=None
+[2025-05-07T18:21:27.750+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.055 seconds
+[2025-05-07T18:21:58.245+0000] {processor.py:161} INFO - Started process (PID=668) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:21:58.246+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:21:58.248+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:21:58.248+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:21:58.257+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:21:58.268+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:21:58.268+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:21:58.278+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:21:58.278+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to None, run_after=None
+[2025-05-07T18:21:58.285+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.044 seconds
+[2025-05-07T18:22:28.746+0000] {processor.py:161} INFO - Started process (PID=725) to work on /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:22:28.746+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/process_cvs.py for tasks to queue
+[2025-05-07T18:22:28.748+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:22:28.748+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:22:28.753+0000] {processor.py:840} INFO - DAG(s) 'cv_processing_pipeline' retrieved from /opt/airflow/dags/process_cvs.py
+[2025-05-07T18:22:28.763+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:22:28.763+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-05-07T18:22:28.773+0000] {logging_mixin.py:188} INFO - [2025-05-07T18:22:28.773+0000] {dag.py:3823} INFO - Setting next_dagrun for cv_processing_pipeline to None, run_after=None
+[2025-05-07T18:22:28.780+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/process_cvs.py took 0.037 seconds

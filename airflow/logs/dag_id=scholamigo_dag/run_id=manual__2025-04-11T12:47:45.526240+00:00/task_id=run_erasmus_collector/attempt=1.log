@@ -1,0 +1,37 @@
+[2025-04-11T12:47:46.910+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-11T12:47:45.526240+00:00 [queued]>
+[2025-04-11T12:47:46.914+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-11T12:47:45.526240+00:00 [queued]>
+[2025-04-11T12:47:46.914+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-11T12:47:46.919+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_erasmus_collector> on 2025-04-11 12:47:45.526240+00:00
+[2025-04-11T12:47:46.921+0000] {standard_task_runner.py:60} INFO - Started process 112 to run task
+[2025-04-11T12:47:46.924+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'scholamigo_dag', 'run_erasmus_collector', 'manual__2025-04-11T12:47:45.526240+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/scholamigo.py', '--cfg-path', '/tmp/tmp_504hc6b']
+[2025-04-11T12:47:46.928+0000] {standard_task_runner.py:88} INFO - Job 12: Subtask run_erasmus_collector
+[2025-04-11T12:47:46.948+0000] {task_command.py:423} INFO - Running <TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-11T12:47:45.526240+00:00 [running]> on host 426a21ea82cf
+[2025-04-11T12:47:46.979+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scholamigo_dag' AIRFLOW_CTX_TASK_ID='run_erasmus_collector' AIRFLOW_CTX_EXECUTION_DATE='2025-04-11T12:47:45.526240+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-11T12:47:45.526240+00:00'
+[2025-04-11T12:47:46.980+0000] {logging_mixin.py:188} INFO - 🚀 Running: /opt/***/landing_zone/collectors/erasmus_collector.py
+[2025-04-11T12:50:12.986+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-04-11T12:50:12.990+0000] {process_utils.py:131} INFO - Sending 15 to group 112. PIDs of all processes in the group: [113, 114, 112]
+[2025-04-11T12:50:12.991+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 112
+[2025-04-11T12:50:12.991+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=113, status='terminated', started='12:47:46') (113) terminated with exit code None
+[2025-04-11T12:50:12.992+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-11T12:50:13.003+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=114, status='terminated', started='12:47:46') (114) terminated with exit code None
+[2025-04-11T12:50:13.002+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/scholamigo.py", line 27, in _run
+    os.system(f"python3 {script_path}")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-04-11T12:50:13.006+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=scholamigo_dag, task_id=run_erasmus_collector, execution_date=20250411T124745, start_date=20250411T124746, end_date=20250411T125013
+[2025-04-11T12:50:13.015+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 12 for task run_erasmus_collector ((psycopg2.errors.ForeignKeyViolation) insert or update on table "task_fail" violates foreign key constraint "task_fail_ti_fkey"
+DETAIL:  Key (dag_id, task_id, run_id, map_index)=(scholamigo_dag, run_erasmus_collector, manual__2025-04-11T12:47:45.526240+00:00, -1) is not present in table "task_instance".
+
+[SQL: INSERT INTO task_fail (task_id, dag_id, run_id, map_index, start_date, end_date, duration) VALUES (%(task_id)s, %(dag_id)s, %(run_id)s, %(map_index)s, %(start_date)s, %(end_date)s, %(duration)s) RETURNING task_fail.id]
+[parameters: {'task_id': 'run_erasmus_collector', 'dag_id': 'scholamigo_dag', 'run_id': 'manual__2025-04-11T12:47:45.526240+00:00', 'map_index': -1, 'start_date': datetime.datetime(2025, 4, 11, 12, 47, 46, 910889, tzinfo=Timezone('UTC')), 'end_date': datetime.datetime(2025, 4, 11, 12, 50, 13, 5367, tzinfo=Timezone('UTC')), 'duration': 146}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 112)
+[2025-04-11T12:50:13.024+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=112, status='terminated', exitcode=1, started='12:47:46') (112) terminated with exit code 1

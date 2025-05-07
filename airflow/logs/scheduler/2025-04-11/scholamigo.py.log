@@ -1,0 +1,176 @@
+[2025-04-11T12:44:44.283+0000] {processor.py:161} INFO - Started process (PID=44) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:44:44.284+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:44:44.286+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:44:44.286+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:44:44.462+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:44:44.589+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:44:44.589+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:44:44.603+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:44:44.603+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:44:44.614+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.334 seconds
+[2025-04-11T12:44:54.320+0000] {processor.py:161} INFO - Started process (PID=100) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:44:54.321+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:44:54.322+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:44:54.322+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:44:54.350+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:44:54.359+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:44:54.359+0000] {taskinstance.py:2700} ERROR - {'DAG Id': 'scholamigo_dag', 'Task Id': 'run_erasmus_collector', 'Run Id': 'manual__2025-04-05T20:38:23.222116+00:00', 'Hostname': '1c326272b88d', 'External Executor Id': 'a61b9632-0f50-4d9c-b820-74887f4e82b4'}
+[2025-04-11T12:44:54.365+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:44:54.365+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=scholamigo_dag, task_id=run_erasmus_collector, execution_date=20250405T203823, start_date=20250405T203824, end_date=20250411T124454
+[2025-04-11T12:44:54.370+0000] {processor.py:791} INFO - Executed failure callback for <TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-05T20:38:23.222116+00:00 [failed]> in state failed
+[2025-04-11T12:44:54.371+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:44:54.371+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:44:54.377+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:44:54.377+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:44:54.383+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.064 seconds
+[2025-04-11T12:45:04.382+0000] {processor.py:161} INFO - Started process (PID=101) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:45:04.383+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:45:04.384+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:04.384+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:45:04.417+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:45:04.426+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:04.426+0000] {taskinstance.py:2700} ERROR - {'DAG Id': 'scholamigo_dag', 'Task Id': 'run_erasmus_collector', 'Run Id': 'scheduled__2025-04-05T00:00:00+00:00', 'Hostname': '1c326272b88d', 'External Executor Id': '79ad788d-f267-489d-8b64-7b0ee36a9ba2'}
+[2025-04-11T12:45:04.431+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:04.431+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=scholamigo_dag, task_id=run_erasmus_collector, execution_date=20250405T000000, start_date=20250405T195517, end_date=20250411T124504
+[2025-04-11T12:45:04.434+0000] {processor.py:791} INFO - Executed failure callback for <TaskInstance: scholamigo_dag.run_erasmus_collector scheduled__2025-04-05T00:00:00+00:00 [failed]> in state failed
+[2025-04-11T12:45:04.435+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:04.435+0000] {taskinstance.py:2700} ERROR - {'DAG Id': 'scholamigo_dag', 'Task Id': 'run_erasmus_collector', 'Run Id': 'manual__2025-04-05T19:55:16.177530+00:00', 'Hostname': '1c326272b88d', 'External Executor Id': '3e17b910-0703-48ea-9282-e55332141d22'}
+[2025-04-11T12:45:04.437+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:04.437+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=scholamigo_dag, task_id=run_erasmus_collector, execution_date=20250405T195516, start_date=20250405T195517, end_date=20250411T124504
+[2025-04-11T12:45:04.438+0000] {processor.py:791} INFO - Executed failure callback for <TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-05T19:55:16.177530+00:00 [failed]> in state failed
+[2025-04-11T12:45:04.439+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:04.439+0000] {taskinstance.py:2700} ERROR - {'DAG Id': 'scholamigo_dag', 'Task Id': 'run_erasmus_collector', 'Run Id': 'scheduled__2025-04-05T00:00:00+00:00', 'Hostname': '1c326272b88d', 'External Executor Id': '79ad788d-f267-489d-8b64-7b0ee36a9ba2'}
+[2025-04-11T12:45:04.441+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:04.441+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=scholamigo_dag, task_id=run_erasmus_collector, execution_date=20250405T000000, start_date=20250405T195517, end_date=20250411T124504
+[2025-04-11T12:45:04.442+0000] {processor.py:791} INFO - Executed failure callback for <TaskInstance: scholamigo_dag.run_erasmus_collector scheduled__2025-04-05T00:00:00+00:00 [failed]> in state failed
+[2025-04-11T12:45:04.444+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:04.444+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:45:04.450+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:04.449+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:45:04.455+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.074 seconds
+[2025-04-11T12:45:34.587+0000] {processor.py:161} INFO - Started process (PID=157) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:45:34.588+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:45:34.590+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:34.589+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:45:34.628+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:45:34.639+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:34.639+0000] {taskinstance.py:2700} ERROR - {'DAG Id': 'scholamigo_dag', 'Task Id': 'run_erasmus_collector', 'Run Id': 'manual__2025-04-05T19:55:16.177530+00:00', 'Hostname': '1c326272b88d', 'External Executor Id': '3e17b910-0703-48ea-9282-e55332141d22'}
+[2025-04-11T12:45:34.646+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:34.646+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=scholamigo_dag, task_id=run_erasmus_collector, execution_date=20250405T195516, start_date=20250405T195517, end_date=20250411T124534
+[2025-04-11T12:45:34.649+0000] {processor.py:791} INFO - Executed failure callback for <TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-05T19:55:16.177530+00:00 [failed]> in state failed
+[2025-04-11T12:45:34.653+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:34.653+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:45:34.659+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:45:34.659+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:45:34.665+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.081 seconds
+[2025-04-11T12:46:05.202+0000] {processor.py:161} INFO - Started process (PID=212) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:46:05.204+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:46:05.205+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:46:05.205+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:46:05.243+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:46:05.252+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:46:05.252+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:46:05.261+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:46:05.261+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:46:05.268+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.070 seconds
+[2025-04-11T12:46:35.793+0000] {processor.py:161} INFO - Started process (PID=268) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:46:35.795+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:46:35.797+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:46:35.797+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:46:35.843+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:46:35.853+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:46:35.853+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:46:35.862+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:46:35.862+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:46:35.870+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.082 seconds
+[2025-04-11T12:47:06.268+0000] {processor.py:161} INFO - Started process (PID=324) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:47:06.269+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:47:06.270+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:47:06.270+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:47:06.307+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:47:06.316+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:47:06.316+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:47:06.325+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:47:06.325+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:47:06.333+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.067 seconds
+[2025-04-11T12:47:36.687+0000] {processor.py:161} INFO - Started process (PID=380) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:47:36.688+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:47:36.690+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:47:36.690+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:47:36.728+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:47:36.737+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:47:36.737+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:47:36.745+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:47:36.745+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:47:36.751+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.067 seconds
+[2025-04-11T12:48:07.080+0000] {processor.py:161} INFO - Started process (PID=436) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:48:07.081+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:48:07.083+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:48:07.083+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:48:07.120+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:48:07.131+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:48:07.131+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:48:07.140+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:48:07.140+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:48:07.148+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.070 seconds
+[2025-04-11T12:48:37.355+0000] {processor.py:161} INFO - Started process (PID=492) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:48:37.356+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:48:37.357+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:48:37.357+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:48:37.386+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:48:37.395+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:48:37.395+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:48:37.404+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:48:37.404+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:48:37.411+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.057 seconds
+[2025-04-11T12:49:07.486+0000] {processor.py:161} INFO - Started process (PID=548) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:49:07.487+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:49:07.488+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:49:07.488+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:49:07.524+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:49:07.535+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:49:07.535+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:49:07.545+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:49:07.544+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:49:07.552+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.068 seconds
+[2025-04-11T12:49:37.885+0000] {processor.py:161} INFO - Started process (PID=604) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:49:37.886+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:49:37.887+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:49:37.887+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:49:37.927+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:49:37.937+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:49:37.937+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:49:37.945+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:49:37.945+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:49:37.952+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.070 seconds
+[2025-04-11T12:50:08.208+0000] {processor.py:161} INFO - Started process (PID=660) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:50:08.209+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:50:08.210+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:50:08.210+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:50:08.242+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:50:08.252+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:50:08.252+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:50:08.260+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:50:08.260+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:50:08.267+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.062 seconds
+[2025-04-11T12:50:38.754+0000] {processor.py:161} INFO - Started process (PID=716) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:50:38.755+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:50:38.757+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:50:38.757+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:50:38.794+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:50:38.804+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:50:38.803+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:50:38.812+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:50:38.812+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:50:38.819+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.070 seconds
+[2025-04-11T12:51:09.248+0000] {processor.py:161} INFO - Started process (PID=772) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:51:09.249+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:51:09.250+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:51:09.250+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:51:09.290+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:51:09.301+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:51:09.300+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:51:09.309+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:51:09.309+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:51:09.316+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.072 seconds
+[2025-04-11T12:51:39.740+0000] {processor.py:161} INFO - Started process (PID=828) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:51:39.741+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:51:39.743+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:51:39.743+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:51:39.779+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:51:39.790+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:51:39.789+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:51:39.798+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:51:39.798+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:51:39.805+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.068 seconds
+[2025-04-11T12:52:10.251+0000] {processor.py:161} INFO - Started process (PID=884) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:52:10.252+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:52:10.254+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:52:10.254+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:52:10.288+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:52:10.297+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:52:10.297+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:52:10.305+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:52:10.305+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:52:10.312+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.064 seconds
+[2025-04-11T12:52:40.663+0000] {processor.py:161} INFO - Started process (PID=939) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:52:40.665+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:52:40.667+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:52:40.666+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:52:40.708+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:52:40.718+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:52:40.718+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:52:40.728+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:52:40.728+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:52:40.735+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.076 seconds
+[2025-04-11T12:53:10.962+0000] {processor.py:161} INFO - Started process (PID=995) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:53:10.964+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:53:10.967+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:53:10.967+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:53:11.006+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:53:11.016+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:53:11.016+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:53:11.025+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:53:11.025+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:53:11.033+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.075 seconds
+[2025-04-11T12:53:41.252+0000] {processor.py:161} INFO - Started process (PID=1051) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:53:41.252+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:53:41.253+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:53:41.253+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:53:41.280+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:53:41.289+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:53:41.288+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:53:41.296+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:53:41.296+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:53:41.303+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.052 seconds
+[2025-04-11T12:54:11.530+0000] {processor.py:161} INFO - Started process (PID=1107) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:54:11.530+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:54:11.531+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:54:11.531+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:54:11.559+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:54:11.567+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:54:11.567+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:54:11.575+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:54:11.574+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:54:11.581+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.053 seconds
+[2025-04-11T12:54:41.771+0000] {processor.py:161} INFO - Started process (PID=1163) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:54:41.771+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:54:41.772+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:54:41.772+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:54:41.804+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:54:41.815+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:54:41.815+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:54:41.825+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:54:41.824+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:54:41.832+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.063 seconds
+[2025-04-11T12:55:12.037+0000] {processor.py:161} INFO - Started process (PID=1219) to work on /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:55:12.037+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scholamigo.py for tasks to queue
+[2025-04-11T12:55:12.039+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:55:12.039+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:55:12.075+0000] {processor.py:840} INFO - DAG(s) 'scholamigo_dag' retrieved from /opt/airflow/dags/scholamigo.py
+[2025-04-11T12:55:12.085+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:55:12.085+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-11T12:55:12.094+0000] {logging_mixin.py:188} INFO - [2025-04-11T12:55:12.093+0000] {dag.py:3823} INFO - Setting next_dagrun for scholamigo_dag to None, run_after=None
+[2025-04-11T12:55:12.100+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scholamigo.py took 0.067 seconds

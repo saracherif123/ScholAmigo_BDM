@@ -1,0 +1,13 @@
+[2025-05-07T18:34:48.016+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: cv_processing_pipeline.upload_to_s3 manual__2025-05-07T18:34:44.446724+00:00 [queued]>
+[2025-05-07T18:34:48.018+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: cv_processing_pipeline.upload_to_s3 manual__2025-05-07T18:34:44.446724+00:00 [queued]>
+[2025-05-07T18:34:48.018+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-07T18:34:48.022+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): upload_to_s3> on 2025-05-07 18:34:44.446724+00:00
+[2025-05-07T18:34:48.024+0000] {standard_task_runner.py:60} INFO - Started process 132 to run task
+[2025-05-07T18:34:48.026+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'cv_processing_pipeline', 'upload_to_s3', 'manual__2025-05-07T18:34:44.446724+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/process_load_cvs.py', '--cfg-path', '/tmp/tmp66jsbbp_']
+[2025-05-07T18:34:48.027+0000] {standard_task_runner.py:88} INFO - Job 29: Subtask upload_to_s3
+[2025-05-07T18:34:48.043+0000] {task_command.py:423} INFO - Running <TaskInstance: cv_processing_pipeline.upload_to_s3 manual__2025-05-07T18:34:44.446724+00:00 [running]> on host cb84f3d78c25
+[2025-05-07T18:34:48.069+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='cv_processing_pipeline' AIRFLOW_CTX_TASK_ID='upload_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2025-05-07T18:34:44.446724+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-07T18:34:44.446724+00:00'
+[2025-05-07T18:34:48.081+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-07T18:34:48.085+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=cv_processing_pipeline, task_id=upload_to_s3, execution_date=20250507T183444, start_date=20250507T183448, end_date=20250507T183448
+[2025-05-07T18:34:48.124+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-07T18:34:48.131+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,32 @@
+[2025-04-11T12:48:01.302+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-11T12:47:59.811834+00:00 [queued]>
+[2025-04-11T12:48:01.305+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-11T12:47:59.811834+00:00 [queued]>
+[2025-04-11T12:48:01.305+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-11T12:48:01.309+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_erasmus_collector> on 2025-04-11 12:47:59.811834+00:00
+[2025-04-11T12:48:01.311+0000] {standard_task_runner.py:60} INFO - Started process 125 to run task
+[2025-04-11T12:48:01.313+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'scholamigo_dag', 'run_erasmus_collector', 'manual__2025-04-11T12:47:59.811834+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/scholamigo.py', '--cfg-path', '/tmp/tmpu0d9kj9t']
+[2025-04-11T12:48:01.314+0000] {standard_task_runner.py:88} INFO - Job 13: Subtask run_erasmus_collector
+[2025-04-11T12:48:01.334+0000] {task_command.py:423} INFO - Running <TaskInstance: scholamigo_dag.run_erasmus_collector manual__2025-04-11T12:47:59.811834+00:00 [running]> on host 426a21ea82cf
+[2025-04-11T12:48:01.364+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scholamigo_dag' AIRFLOW_CTX_TASK_ID='run_erasmus_collector' AIRFLOW_CTX_EXECUTION_DATE='2025-04-11T12:47:59.811834+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-11T12:47:59.811834+00:00'
+[2025-04-11T12:48:01.365+0000] {logging_mixin.py:188} INFO - 🚀 Running: /opt/***/landing_zone/collectors/erasmus_collector.py
+[2025-04-11T12:49:11.727+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to restarting. Terminating instance.
+[2025-04-11T12:49:11.729+0000] {process_utils.py:131} INFO - Sending 15 to group 125. PIDs of all processes in the group: [126, 127, 125]
+[2025-04-11T12:49:11.730+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 125
+[2025-04-11T12:49:11.730+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-11T12:49:11.737+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/scholamigo.py", line 27, in _run
+    os.system(f"python3 {script_path}")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-04-11T12:49:11.739+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=scholamigo_dag, task_id=run_erasmus_collector, execution_date=20250411T124759, start_date=20250411T124801, end_date=20250411T124911
+[2025-04-11T12:49:11.745+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 13 for task run_erasmus_collector (Task received SIGTERM signal; 125)
+[2025-04-11T12:49:11.749+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=125, status='terminated', exitcode=1, started='12:48:00') (125) terminated with exit code 1
+[2025-04-11T12:49:11.749+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=126, status='terminated', started='12:48:00') (126) terminated with exit code None
+[2025-04-11T12:49:11.749+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=127, status='terminated', started='12:48:00') (127) terminated with exit code None

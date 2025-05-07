@@ -1,0 +1,25 @@
+[2025-05-07T18:58:26.343+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: cv_processing_dag.extract_pdfs manual__2025-05-07T18:58:25.293008+00:00 [queued]>
+[2025-05-07T18:58:26.346+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: cv_processing_dag.extract_pdfs manual__2025-05-07T18:58:25.293008+00:00 [queued]>
+[2025-05-07T18:58:26.346+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-05-07T18:58:26.350+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract_pdfs> on 2025-05-07 18:58:25.293008+00:00
+[2025-05-07T18:58:26.352+0000] {standard_task_runner.py:60} INFO - Started process 82 to run task
+[2025-05-07T18:58:26.354+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'cv_processing_dag', 'extract_pdfs', 'manual__2025-05-07T18:58:25.293008+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/load_data_to_s3.py', '--cfg-path', '/tmp/tmpf9f74x22']
+[2025-05-07T18:58:26.355+0000] {standard_task_runner.py:88} INFO - Job 52: Subtask extract_pdfs
+[2025-05-07T18:58:26.373+0000] {task_command.py:423} INFO - Running <TaskInstance: cv_processing_dag.extract_pdfs manual__2025-05-07T18:58:25.293008+00:00 [running]> on host 6002bf6f7155
+[2025-05-07T18:58:26.396+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='cv_processing_dag' AIRFLOW_CTX_TASK_ID='extract_pdfs' AIRFLOW_CTX_EXECUTION_DATE='2025-05-07T18:58:25.293008+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-07T18:58:25.293008+00:00'
+[2025-05-07T18:58:26.397+0000] {logging_mixin.py:188} INFO - 🚀 Running: /opt/***/ScholAmigo_BDM/Trusted_zone/formatters/cv_extract_pdfs.py
+[2025-05-07T18:58:26.408+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/load_data_to_s3.py", line 20, in _run
+    raise RuntimeError(f"❌ Script failed: {script_path}")
+RuntimeError: ❌ Script failed: /opt/***/ScholAmigo_BDM/Trusted_zone/formatters/cv_extract_pdfs.py
+[2025-05-07T18:58:26.411+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=cv_processing_dag, task_id=extract_pdfs, execution_date=20250507T185825, start_date=20250507T185826, end_date=20250507T185826
+[2025-05-07T18:58:26.414+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 52 for task extract_pdfs (❌ Script failed: /opt/***/ScholAmigo_BDM/Trusted_zone/formatters/cv_extract_pdfs.py; 82)
+[2025-05-07T18:58:26.454+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-05-07T18:58:26.464+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
