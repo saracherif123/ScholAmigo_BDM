@@ -4,8 +4,8 @@ import re
 from pathlib import Path
 
 # Input/output directories
-input_dir = "/opt/airflow/trusted_zone/data/resume_data"
-output_dir = "/opt/airflow/trusted_zone/data/resume_data/cleaned/"
+input_dir = "/Users/sarasaad/Documents/BDMA /UPC/BDM/Project/BDM Scholamigo/ScholAmigo_BDM/trusted_zone/data/resume_data"
+output_dir = "/Users/sarasaad/Documents/BDMA /UPC/BDM/Project/BDM Scholamigo/ScholAmigo_BDM/trusted_zone/data/resume_data/cleaned/"
 Path(output_dir).mkdir(parents=True, exist_ok=True)
 
 def normalize_text(text):

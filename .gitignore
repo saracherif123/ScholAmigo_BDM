@@ -1,0 +1,18 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Airflow logs
+airflow/logs/
+
+# Environment files
+.env
+.env.*
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store 

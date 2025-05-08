@@ -3,7 +3,7 @@ from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
 import os
 
-# Adjust these paths inside the Airflow container
+# Use paths inside the Airflow container
 BASE_DIR = "/opt/airflow"
 EXTRACT_SCRIPT = os.path.join(BASE_DIR, "trusted_zone/formatters/cv_extract_pdfs.py")
 TRANSFORM_SCRIPT = os.path.join(BASE_DIR, "trusted_zone/formatters/cv_transformer.py")

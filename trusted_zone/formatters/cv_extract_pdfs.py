@@ -5,8 +5,8 @@ from pathlib import Path
 import pdfplumber
 
 # Input/output directories
-input_dir = "/opt/airflow/landing_zone/data/resume_data"
-output_dir = "/opt/airflow/trusted_zone/data/resume_data"
+input_dir = "landing_zone/data"
+output_dir = "trusted_zone/data/resume_data"
 Path(output_dir).mkdir(parents=True, exist_ok=True)
 
 # Define common section headers (case-insensitive)
