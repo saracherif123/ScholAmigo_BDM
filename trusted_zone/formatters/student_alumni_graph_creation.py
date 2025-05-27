@@ -884,8 +884,8 @@ def main():
     NEO4J_PASSWORD = "password"
     
     # File paths
-    STUDENT_FILE = "cleaned_student_profiles.jsonl"
-    ALUMNI_FILE = "cleaned_alumni_profiles.json"
+    STUDENT_FILE = "../data/cleaned_student_profiles.jsonl"
+    ALUMNI_FILE = "../data/cleaned_alumni_profiles.json"
     
     # Optimization parameters
     BATCH_SIZE = 2000  # Increase batch size for better performance
