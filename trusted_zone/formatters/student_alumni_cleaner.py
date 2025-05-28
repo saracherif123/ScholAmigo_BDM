@@ -225,8 +225,8 @@ def main():
         alumni_profiles_path = "../../landing_zone/data/erasmus_linkedin_profiles/Erasmus_Linkedin_Profiles.json"
         
         # Output file paths
-        cleaned_student_profiles_path = "../data/cleaned_student_profiles.jsonl"
-        cleaned_alumni_profiles_path = "../data/cleaned_alumni_profiles.json"
+        cleaned_student_profiles_path = "../data/graph_data/cleaned_student_profiles.jsonl"
+        cleaned_alumni_profiles_path = "../data/graph_data/cleaned_alumni_profiles.json"
         
         # Check if input files exist
         if not os.path.exists(student_profiles_path):
@@ -248,9 +248,13 @@ def main():
         
         # Save cleaned data
         if cleaned_student_data:
+            # Ensure output directory exists
+            os.makedirs(os.path.dirname(cleaned_student_profiles_path), exist_ok=True)
             save_cleaned_data(cleaned_student_data, cleaned_student_profiles_path, 'jsonl')
         
         if cleaned_alumni_data:
+            # Ensure output directory exists
+            os.makedirs(os.path.dirname(cleaned_alumni_profiles_path), exist_ok=True)
             save_cleaned_data(cleaned_alumni_data, cleaned_alumni_profiles_path, 'json')
         
         print("\nData preprocessing completed successfully!")

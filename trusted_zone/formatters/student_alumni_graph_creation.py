@@ -200,12 +200,10 @@ class OptimizedNeo4jPropertyGraphBuilder:
         # Create Skill nodes with type classification
         skill_params = []
         for skill in entities['skills']:
-            skill_type = 'hobby'  # Default
-            # Simple heuristic: if skill appears in professional contexts, mark as professional
-            skill_params.append({'name': skill, 'skill_type': skill_type})
-        
+            skill_params.append({'name': skill})
+
         self.batch_execute(
-            "MERGE (s:Skill {name: $name}) SET s.skill_type = $skill_type",
+            "MERGE (s:Skill {name: $name})",  # Removed SET s.skill_type = $skill_type
             skill_params,
             "Creating Skill nodes"
         )
@@ -366,6 +364,59 @@ class OptimizedNeo4jPropertyGraphBuilder:
         
         print(f"Relationship creation completed in {time.time() - start_time:.2f} seconds")
     
+    def randomly_assign_skills_to_students(self, students_df, alumni_data: Dict, num_students: int = 100):
+        """Randomly assign skills from alumni profiles to 100 students"""
+        if not students_df:
+            return
+        
+        # Collect all alumni skills
+        alumni_skills = set()
+        for org_data in alumni_data.values():
+            for profile in org_data.get('profiles', []):
+                if profile.get('skills'):
+                    for skill_item in profile['skills']:
+                        if isinstance(skill_item, dict) and skill_item.get('skill'):
+                            alumni_skills.add(skill_item['skill'])
+        
+        alumni_skills_list = list(alumni_skills)
+        if not alumni_skills_list:
+            print("No alumni skills found")
+            return
+        
+        # Get random sample of students
+        students_data = students_df.collect()
+        if len(students_data) < num_students:
+            num_students = len(students_data)
+        
+        random_students = random.sample(students_data, num_students)
+        
+        # Create skill assignments
+        skill_assignments = []
+        for student in random_students:
+            student_name = student.asDict().get('name', '') or ''
+            # Assign 2-5 random skills to each student
+            num_skills = random.randint(2, 5)
+            assigned_skills = random.sample(alumni_skills_list, min(num_skills, len(alumni_skills_list)))
+            
+            for skill in assigned_skills:
+                skill_assignments.append({
+                    'student_name': student_name,
+                    'skill': skill
+                })
+        
+        # Execute skill assignments
+        self.batch_execute(
+            """
+            MATCH (s:Student {name: $student_name})
+            MATCH (sk:Skill {name: $skill})
+            MERGE (s)-[:HAS_SKILL]->(sk)
+            """,
+            skill_assignments,
+            "Creating random Student-Skill relationships"
+        )
+        
+        print(f"Randomly assigned skills from alumni to {num_students} students")
+
     def _create_alumni_relationships_batched(self, alumni_data: Dict):
         """Create alumni relationships in batches"""
         scholarship_rels = []
@@ -475,6 +526,15 @@ class OptimizedNeo4jPropertyGraphBuilder:
         
         # Prepare student data
         if students_df:
+            # Get institution data for students (query Neo4j to get their assigned institutions)
+            with self.driver.session() as session:
+                student_institutions = session.run("""
+                    MATCH (s:Student)-[r:STUDIES]->(i:Institution)
+                    RETURN s.name as student_name, i.name as institution
+                """).data()
+                
+                student_institution_map = {si['student_name']: si['institution'] for si in student_institutions}
+            
             students_spark = students_df.select(
                 col("name").alias("student_name"),
                 col("hobbies").alias("skills"),
@@ -491,7 +551,8 @@ class OptimizedNeo4jPropertyGraphBuilder:
                     'name': row.student_name,
                     'skills': skills,
                     'degree': row.degree or '',
-                    'country': row.country or ''
+                    'country': row.country or '',
+                    'institution': student_institution_map.get(row.student_name, '')  # NEW
                 })
         
         # Prepare alumni data
@@ -501,18 +562,22 @@ class OptimizedNeo4jPropertyGraphBuilder:
                 skills = set()
                 if profile.get('skills'):
                     skills = {s.get('skill', '') for s in profile['skills'] 
-                             if isinstance(s, dict) and s.get('skill')}
+                            if isinstance(s, dict) and s.get('skill')}
                 
                 degree = ''
+                institution = ''  # NEW
                 if profile.get('education'):
-                    degrees = [edu.get('degree', '').split(',')[0].strip() 
-                              for edu in profile['education'] if edu.get('degree')]
-                    degree = degrees[0] if degrees else ''
+                    for edu in profile['education']:
+                        if edu.get('degree') and not degree:
+                            degree = edu['degree'].split(',')[0].strip()
+                        if edu.get('institution') and not institution:  # NEW
+                            institution = edu['institution']
                 
                 alumni_list.append({
                     'name': profile.get('name', '') or '',
                     'skills': skills,
-                    'degree': degree
+                    'degree': degree,
+                    'institution': institution  # NEW
                 })
         
         print(f"Processing {len(student_list)} students and {len(alumni_list)} alumni")
@@ -523,35 +588,50 @@ class OptimizedNeo4jPropertyGraphBuilder:
         print(f"Similarity relationships created in {time.time() - start_time:.2f} seconds")
     
     def _calculate_similarities_optimized(self, student_list: List[Dict], alumni_list: List[Dict]):
-        """Optimized similarity calculation using indexing and sampling"""
+        """Optimized similarity calculation using indexing and sampling (FIXED VERSION)"""
         
         # 1. CREATE SKILL-BASED INDEXES
         skill_to_students = defaultdict(list)
         skill_to_alumni = defaultdict(list)
         degree_to_students = defaultdict(list)
         degree_to_alumni = defaultdict(list)
+        institution_to_students = defaultdict(list)
+        institution_to_alumni = defaultdict(list)
         
-        # Index students by skills and degrees
+        # Index students by skills, degrees, and institutions
         for i, student in enumerate(student_list):
             for skill in student['skills']:
-                skill_to_students[skill].append(i)
+                if skill.strip():  # Make sure skill is not empty
+                    skill_to_students[skill.lower()].append(i)  # Use lowercase for matching
             if student['degree']:
                 degree_to_students[student['degree'].lower()].append(i)
+            if student.get('institution'):
+                institution_to_students[student['institution'].lower()].append(i)
         
-        # Index alumni by skills and degrees  
+        # Index alumni by skills, degrees, and institutions
         for i, alumni in enumerate(alumni_list):
             for skill in alumni['skills']:
-                skill_to_alumni[skill].append(i)
+                if skill.strip():  # Make sure skill is not empty
+                    skill_to_alumni[skill.lower()].append(i)  # Use lowercase for matching
             if alumni['degree']:
                 degree_to_alumni[alumni['degree'].lower()].append(i)
+            if alumni.get('institution'):
+                institution_to_alumni[alumni['institution'].lower()].append(i)
         
-        print("Created skill and degree indexes")
+        print("Created skill, degree, and institution indexes")
+        print(f"Alumni skills indexed: {len(skill_to_alumni)} unique skills")
+        print(f"Alumni degrees indexed: {len(degree_to_alumni)} unique degrees")
+        print(f"Student skills indexed: {len(skill_to_students)} unique skills")
         
-        # 2. OPTIMIZED STUDENT-TO-STUDENT SIMILARITIES
+        # Debug: Print some sample skills to check data
+        if skill_to_alumni:
+            print(f"Sample alumni skills: {list(skill_to_alumni.keys())[:10]}")
+        if skill_to_students:
+            print(f"Sample student skills: {list(skill_to_students.keys())[:10]}")
+        
+        # 2. STUDENT-TO-STUDENT SIMILARITIES (keep existing logic)
         print("Calculating student-to-student similarities...")
         student_similarities = []
-        
-        # Use a more efficient approach: only compare students with shared attributes
         processed_pairs = set()
         
         def process_student_batch(student_indices):
@@ -562,7 +642,8 @@ class OptimizedNeo4jPropertyGraphBuilder:
                 
                 # Find candidates through shared skills (most selective)
                 for skill in student['skills']:
-                    candidates.update(skill_to_students[skill])
+                    if skill.strip():
+                        candidates.update(skill_to_students[skill.lower()])
                 
                 # Add candidates through shared degrees
                 if student['degree']:
@@ -570,7 +651,7 @@ class OptimizedNeo4jPropertyGraphBuilder:
                 
                 # Remove self and limit candidates
                 candidates.discard(i)
-                candidates = list(candidates)[:100]  # Limit to top 100 candidates
+                candidates = list(candidates)[:100]
                 
                 # Calculate similarities
                 similarities = []
@@ -581,10 +662,10 @@ class OptimizedNeo4jPropertyGraphBuilder:
                             processed_pairs.add(pair)
                             other_student = student_list[j]
                             score = self.calculate_similarity_score(
-                                student['skills'], student['degree'], student['country'],
-                                other_student['skills'], other_student['degree'], other_student['country']
+                                student['skills'], student['degree'], student['country'], student.get('institution', ''),
+                                other_student['skills'], other_student['degree'], other_student['country'], other_student.get('institution', '')
                             )
-                            if score > 0.1:  # Only keep meaningful similarities
+                            if score > 0.1:
                                 similarities.append((j, score))
                 
                 # Keep top 3 similarities
@@ -601,7 +682,7 @@ class OptimizedNeo4jPropertyGraphBuilder:
         # Process in parallel batches
         batch_size = max(100, len(student_list) // (self.max_workers * 4))
         student_batches = [list(range(i, min(i + batch_size, len(student_list)))) 
-                          for i in range(0, len(student_list), batch_size)]
+                        for i in range(0, len(student_list), batch_size)]
         
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
             futures = [executor.submit(process_student_batch, batch) for batch in student_batches]
@@ -610,7 +691,7 @@ class OptimizedNeo4jPropertyGraphBuilder:
         
         print(f"Found {len(student_similarities)} student-student similarities")
         
-        # 3. OPTIMIZED STUDENT-TO-ALUMNI SIMILARITIES  
+        # 3. FIXED STUDENT-TO-ALUMNI SIMILARITIES  
         print("Calculating student-to-alumni similarities...")
         alumni_similarities = []
         
@@ -620,28 +701,56 @@ class OptimizedNeo4jPropertyGraphBuilder:
                 student = student_list[i]
                 candidates = set()
                 
+                # Debug: Print student info for first few students
+                if i < 3:
+                    print(f"Processing student {i}: {student['name']}")
+                    print(f"Student skills: {student['skills']}")
+                    print(f"Student degree: {student['degree']}")
+                
                 # Find alumni candidates through shared skills
                 for skill in student['skills']:
-                    candidates.update(skill_to_alumni[skill])
+                    if skill.strip():
+                        skill_lower = skill.lower()
+                        alumni_with_skill = skill_to_alumni.get(skill_lower, [])
+                        candidates.update(alumni_with_skill)
+                        if i < 3 and alumni_with_skill:
+                            print(f"Skill '{skill}' matches {len(alumni_with_skill)} alumni")
                 
                 # Add through shared degrees
                 if student['degree']:
-                    candidates.update(degree_to_alumni[student['degree'].lower()])
+                    degree_lower = student['degree'].lower()
+                    alumni_with_degree = degree_to_alumni.get(degree_lower, [])
+                    candidates.update(alumni_with_degree)
+                    if i < 3 and alumni_with_degree:
+                        print(f"Degree '{student['degree']}' matches {len(alumni_with_degree)} alumni")
+                
+                # Add through shared institutions
+                if student.get('institution'):
+                    inst_lower = student['institution'].lower()
+                    alumni_with_inst = institution_to_alumni.get(inst_lower, [])
+                    candidates.update(alumni_with_inst)
+                    if i < 3 and alumni_with_inst:
+                        print(f"Institution '{student['institution']}' matches {len(alumni_with_inst)} alumni")
+                
+                if i < 3:
+                    print(f"Total alumni candidates for student {i}: {len(candidates)}")
                 
                 # Calculate similarities
                 similarities = []
                 for j in candidates:
                     alumni = alumni_list[j]
                     score = self.calculate_similarity_score(
-                        student['skills'], student['degree'], student['country'],
-                        alumni['skills'], alumni['degree']
+                        student['skills'], student['degree'], student['country'], student.get('institution', ''),
+                        alumni['skills'], alumni['degree'], None, alumni.get('institution', '')
                     )
-                    if score > 0.1:  # Only meaningful similarities
+                    if score > 0.05:  # Lower threshold to capture more matches
                         similarities.append((j, score))
+                        if i < 3:  # Debug output for first few students
+                            print(f"Alumni match: {alumni['name']} with score {score}")
                 
-                # Keep top 3 similarities
+                # Keep top 5 similarities (increased from 3)
                 similarities.sort(key=lambda x: x[1], reverse=True)
-                for similar_idx, score in similarities[:3]:
+                for similar_idx, score in similarities[:5]:
                     batch_similarities.append({
                         'student': student['name'],
                         'alumni': alumni_list[similar_idx]['name'],
@@ -823,29 +932,34 @@ class OptimizedNeo4jPropertyGraphBuilder:
                     except Exception as e:
                         print(f"Error creating similarity relationship: {e}")
     
-    def calculate_similarity_score(self, entity1_skills: Set[str], entity1_degree: str, entity1_country: str,
-                                 entity2_skills: Set[str], entity2_degree: str, entity2_country: str = None) -> float:
-        """Calculate similarity score between two entities (optimized version)"""
+    def calculate_similarity_score(self, entity1_skills: Set[str], entity1_degree: str, entity1_country: str, entity1_institution: str,
+                             entity2_skills: Set[str], entity2_degree: str, entity2_country: str = None, entity2_institution: str = None) -> float:
+        """Calculate similarity score between two entities (updated with institution)"""
         score = 0.0
         
-        # Skill similarity (Jaccard coefficient) - weight: 0.5
+        # Skill similarity (Jaccard coefficient) - weight: 0.4 (reduced to make room for institution)
         if entity1_skills and entity2_skills:
             intersection = len(entity1_skills & entity2_skills)
             union = len(entity1_skills | entity2_skills)
             skill_similarity = intersection / union if union > 0 else 0
-            score += skill_similarity * 0.5
+            score += skill_similarity * 0.4
         
-        # Degree similarity - weight: 0.3
+        # Degree similarity - weight: 0.25
         if entity1_degree and entity2_degree:
             if entity1_degree.lower() == entity2_degree.lower():
-                score += 0.3
+                score += 0.25
             elif any(word in entity2_degree.lower() for word in entity1_degree.lower().split() if len(word) > 3):
-                score += 0.15
+                score += 0.125
         
-        # Country similarity - weight: 0.2
+        # Institution similarity - weight: 0.25 (NEW)
+        if entity1_institution and entity2_institution:
+            if entity1_institution.lower() == entity2_institution.lower():
+                score += 0.25
+        
+        # Country similarity - weight: 0.1 (reduced)
         if entity2_country is not None:
             if entity1_country and entity2_country and entity1_country.lower() == entity2_country.lower():
-                score += 0.2
+                score += 0.1
         
         return round(score, 3)
     
@@ -884,8 +998,8 @@ def main():
     NEO4J_PASSWORD = "password"
     
     # File paths
-    STUDENT_FILE = "../data/cleaned_student_profiles.jsonl"
-    ALUMNI_FILE = "../data/cleaned_alumni_profiles.json"
+    STUDENT_FILE = "../data/graph_data/cleaned_student_profiles.jsonl"
+    ALUMNI_FILE = "../data/graph_data/cleaned_alumni_profiles.json"
     
     # Optimization parameters
     BATCH_SIZE = 2000  # Increase batch size for better performance
@@ -926,6 +1040,9 @@ def main():
         
         # Create relationships with batch processing
         graph_builder.create_relationships_optimized(students_df, alumni_data)
+        
+        # Randomly assign alumni skills to 100 students
+        graph_builder.randomly_assign_skills_to_students(students_df, alumni_data, 100)
         
         # Create similarity relationships with Spark
         # graph_builder.create_similarity_relationships_spark(students_df, alumni_data)
