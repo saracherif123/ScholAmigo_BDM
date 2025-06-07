@@ -36,7 +36,7 @@ def process_erasmus_data(**context):
 
     # S3 configuration
     bucket_name = 'scholamigo'
-    prefix = 'landing_zone_data/erasmus_data/'
+    prefix = 'landing_zone_data/erasmus_data/' #should be changed to where the updated files are for trusted zone
     
     # List all objects in S3
     response = s3.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
@@ -60,10 +60,10 @@ def process_erasmus_data(**context):
                 Body=json.dumps(data, ensure_ascii=False, indent=2),
                 ContentType='application/json'
             )
-            print(f"✅ Successfully processed {file_key}")
-            print(f"✅ Output saved to {output_key}")
+            print(f" Successfully processed {file_key}")
+            print(f" Output saved to {output_key}")
         except Exception as e:
-            print(f"❌ Error processing {file_key}: {e}")
+            print(f" Error processing {file_key}: {e}")
 
 # Define the task
 process_task = PythonOperator(

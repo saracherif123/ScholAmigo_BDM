@@ -37,8 +37,7 @@ pytesseract
 
 # Text Processing
 nltk
-spacy
-en-core-web-sm
+spacy>=3.8.0
 beautifulsoup4
 lxml
 
