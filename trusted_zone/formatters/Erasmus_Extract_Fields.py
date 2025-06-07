@@ -161,7 +161,7 @@ Your task is to extract specific structured information in **valid JSON format o
 Ensure the output is always a **valid JSON object** using the following structure:
 
 {{
-  "scholarship_name": "",
+  "scholarship_name": "", // the Program's name (not just 'Erasmus Mundus Master or EMJMD')
   "description": "",
   "important_dates": [{{"date": "strictly DD/MM/YYYY", "description": "application_opening or application_deadline", "comments":""}}], //Deadlines and opening date
   "deadlines_more_details_link": "",

@@ -365,32 +365,30 @@ def standardize_erasmus_scholarship(erasmus_data_row):
     
     return standardized if standardized else None
 
-# Register the UDF
-erasmus_schema = StructType([
+# Define the schema for the nested structure
+scholarship_schema = StructType([
     StructField("scholarship_available_for_current_intake", BooleanType(), True),
     StructField("comments", StringType(), True),
     StructField("programme_countries", StructType([
         StructField("tuition_coverage", BooleanType(), True),
         StructField("tuition_coverage_details", StringType(), True),
-        StructField("travel_allowance", StringType(), True),  # Can be string or array
+        StructField("travel_allowance", StringType(), True),
         StructField("monthly_allowance", IntegerType(), True),
-        StructField("installation_costs", StringType(), True)  # Changed to String to handle "covered_in_monthly"
+        StructField("installation_costs", StringType(), True)
     ]), True),
     StructField("partner_countries", StructType([
         StructField("tuition_coverage", BooleanType(), True),
         StructField("tuition_coverage_details", StringType(), True),
-        StructField("travel_allowance", StringType(), True),  # Can be string or array
+        StructField("travel_allowance", StringType(), True),
         StructField("monthly_allowance", IntegerType(), True),
-        StructField("installation_costs", StringType(), True)  # Changed to String to handle "covered_in_monthly"
+        StructField("installation_costs", StringType(), True)
     ]), True)
 ])
 
-
-standardize_erasmus_udf = F.udf(standardize_erasmus_scholarship, erasmus_schema)
-
+# Register the UDF
+standardize_erasmus_udf = F.udf(standardize_erasmus_scholarship, scholarship_schema)
 
 # Load Data 
-
 df = spark.read.json(f"{PATH}/structured_scholarships.json", multiLine=True)
 
 df_clean = (
@@ -423,8 +421,11 @@ df_clean = df_clean.withColumn("clean_status", status_udf(col("clean_important_d
 S3_BUCKET = "scholamigo"
 S3_PREFIX = "trusted_zone_data/erasmus_data/"
 
-# Write directly to S3 in Parquet format
-df_clean.write.mode("overwrite").parquet(f"s3a://{S3_BUCKET}/{S3_PREFIX}clean_erasmus.parquet")
+# Write directly to S3 in Parquet format with schema preservation
+df_clean.write \
+    .mode("overwrite") \
+    .option("mergeSchema", "true") \
+    .parquet(f"s3a://{S3_BUCKET}/{S3_PREFIX}clean_erasmus.parquet")
 
 # Write directly to S3 in JSON format (as individual files)
 # df_clean.write.mode("overwrite").json(f"s3a://{S3_BUCKET}/{S3_PREFIX}clean_erasmus.json")
