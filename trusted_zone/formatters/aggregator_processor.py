@@ -7,6 +7,10 @@ import country_converter as coco
 from datetime import datetime
 import json
 import os
+import boto3
+
+aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID')
+aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY')
 
 def create_spark_session():
     return SparkSession.builder \
@@ -119,7 +123,7 @@ def process_scholarship(scholarship):
              for word in ["master", "postgraduate"]):
         level = "Master"
     elif any(word in description_lower or word in requirements_lower 
-             for word in ["phd", "doctoral"]):
+             for word in ["phd", "doctoral"]): 
         level = "PhD"
 
     # Extract scholarship type from description and requirements
@@ -156,12 +160,23 @@ def process_scholarship(scholarship):
     
     return info
 
+def upload_to_s3(file_path, bucket_name, s3_key):
+    s3 = boto3.client('s3', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key)
+
+    try:
+        s3.upload_file(file_path, bucket_name, s3_key)
+        print(f"Successfully uploaded {file_path} to s3://{bucket_name}/{s3_key}")
+    except Exception as e:
+        print(f"Error uploading to S3: {str(e)}")
+        raise
+
 def process_aggregator_data():
     spark = create_spark_session()
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     input_path = os.path.join(project_root, "landing_zone", "data", "aggregator_data", "scholarships_aggregate.json")
-    output_path = os.path.join(project_root, "trusted_zone", "data", "aggregator_data", "processed")
-    os.makedirs(output_path, exist_ok=True)
+    output_dir = os.path.join(project_root, "trusted_zone", "data", "aggregator_data", "processed")
+    output_file = os.path.join(output_dir, "aggregator_processed.json")
+    os.makedirs(output_dir, exist_ok=True)
 
     print(f"Reading data from: {input_path}")
     # Read JSON file line by line (NDJSON format)
@@ -210,10 +225,21 @@ def process_aggregator_data():
     processed_df = processed_df.withColumn("scholarship_name", col("scholarship_info.scholarship_name"))
     processed_df = processed_df.dropDuplicates(["scholarship_name"])
 
-    print(f"Writing processed data to: {output_path}")
-    processed_df.write.mode("overwrite").json(output_path)
+    # Collect data to driver and save as single JSON file
+    processed_data = [row["scholarship_info"].asDict() for row in processed_df.collect()]
+    
+    print(f"Writing processed data to: {output_file}")
+    with open(output_file, 'w') as f:
+        json.dump(processed_data, f, indent=2)
+
+    # Upload to S3
+    bucket_name = 'scholamigo'
+    prefix = 'trusted_zone_data/aggregator_data/' 
+    s3_key = "aggregator_processed.json"
+    upload_to_s3(output_file, bucket_name, prefix + s3_key)
+
     print("Processing complete!")
     spark.stop()
 
 if __name__ == "__main__":
-    process_aggregator_data() 
+    process_aggregator_data()
