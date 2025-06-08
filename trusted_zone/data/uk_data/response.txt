@@ -1,0 +1,600 @@
+[
+  {
+    "scholarship_name": "Global Futures Scholarship",
+    "description": "Rewards excellence with merit-based scholarships for undergraduate and postgraduate students.",
+    "important_dates": [],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "partial",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "N/A",
+      "comments": "Available for undergraduate and postgraduate students. Eligibility criteria and deadlines vary by region.",
+      "tuition_coverage": "N/A",
+      "travel_allowance": "N/A",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "Humanitarian Scholarship, Humanities Scholarships, Science and Engineering International Excellence Awards, Catherine Chisholm International Scholarships",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "N/A",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "N/A",
+    "level": "N/A",
+    "fields_of_study": [],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "N/A",
+    "website": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/",
+    "duration": "N/A",
+    "Other": []
+  },
+  {
+    "scholarship_name": "Humanitarian Scholarship",
+    "description": "Supports individuals at immediate risk who have been forced to flee their homes due to armed conflict.",
+    "important_dates": [
+      {
+        "date": "03/02/2025",
+        "description": "application_opening",
+        "comments": ""
+      },
+      {
+        "date": "31/03/2025",
+        "description": "application_deadline",
+        "comments": ""
+      },
+      {
+        "date": "30/05/2025",
+        "description": "Applicants receive results",
+        "comments": ""
+      }
+    ],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "full",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "Yes",
+      "comments": "Covers tuition fees, living expenses, and visas.",
+      "tuition_coverage": "Yes",
+      "travel_allowance": "N/A",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/humanitarian-scholarship/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "N/A",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "N/A",
+    "level": "Bachelor",
+    "fields_of_study": [],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "fall",
+    "website": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/humanitarian-scholarship/",
+    "duration": "3 years",
+    "Other": [
+      "Excludes Medicine, Dentistry, Nursing, and Architecture degrees.",
+      "Applicants must be at serious risk due to armed conflict and displaced from their homes."
+    ]
+  },
+  {
+    "scholarship_name": "Humanities Scholarships",
+    "description": "Available for undergraduate students. Eligibility criteria and deadlines vary by region.",
+    "important_dates": [],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "partial",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "N/A",
+      "comments": "Awards granted based on academic achievement and programme application quality.",
+      "tuition_coverage": "N/A",
+      "travel_allowance": "N/A",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/undergraduate/humanities-campaigns/scholarships/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "N/A",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "N/A",
+    "level": "Bachelor",
+    "fields_of_study": [],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "fall",
+    "website": "https://www.manchester.ac.uk/study/undergraduate/humanities-campaigns/scholarships/",
+    "duration": "N/A",
+    "Other": [
+      "Awards are applied as a tuition fee discount at registration.",
+      "If successful with more than one scholarship, the total cannot exceed 50% of tuition fees."
+    ]
+  },
+  {
+    "scholarship_name": "Science and Engineering International Excellence Awards",
+    "description": "Scholarships for undergraduate students from selected countries.",
+    "important_dates": [],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "partial",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "Yes",
+      "comments": "Awarded to the highest-performing applications based on UCAS application and academic results.",
+      "tuition_coverage": "N/A",
+      "travel_allowance": "N/A",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/international-excellence-scholarships/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "N/A",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "N/A",
+    "level": "Bachelor",
+    "fields_of_study": [
+      "Engineering, manufacturing and construction",
+      "Natural sciences, mathematics and statistics",
+      "Information and Communication Technologies"
+    ],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "fall",
+    "website": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/international-excellence-scholarships/",
+    "duration": "4 years",
+    "Other": [
+      "Award amount: £5,000 per year.",
+      "No separate application needed; eligible students are automatically considered."
+    ]
+  },
+  {
+    "scholarship_name": "Catherine Chisholm International Scholarship",
+    "description": "Awards to academically excellent international students.",
+    "important_dates": [
+      {
+        "date": "30/05/2025",
+        "description": "application_deadline",
+        "comments": ""
+      },
+      {
+        "date": "18/04/2025",
+        "description": "Scholarship application deadline",
+        "comments": ""
+      },
+      {
+        "date": "16/05/2025",
+        "description": "Successful awardees announced",
+        "comments": ""
+      }
+    ],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "partial",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "Yes",
+      "comments": "Award value: £7,000 per annum (undergraduate) or £10,000 (postgraduate). Applied as a fee reduction.",
+      "tuition_coverage": "N/A",
+      "travel_allowance": "N/A",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/catherine-chisholm-scholarship/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "N/A",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "Scholarship application form",
+    "level": "N/A",
+    "fields_of_study": [],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "fall",
+    "website": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/catherine-chisholm-scholarship/",
+    "duration": "N/A",
+    "Other": [
+      "Eligible students must be domiciled in specific countries.",
+      "Students must be self-funded (not sponsored)."
+    ]
+  },
+  {
+    "scholarship_name": "ASEAN-UK SAGE Women in STEM Scholarships",
+    "description": "Fully-funded scholarships for women from ASEAN countries studying STEM subjects.",
+    "important_dates": [
+      {
+        "date": "04/2025",
+        "description": "application_deadline",
+        "comments": ""
+      },
+      {
+        "date": "12/06/2025",
+        "description": "Successful applicants notified",
+        "comments": ""
+      }
+    ],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "full",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "Yes",
+      "comments": "Covers tuition fees, monthly stipend, IELTS fee, travel, study-related costs, visa, insurance, and reasonable adjustments.",
+      "tuition_coverage": "Yes",
+      "travel_allowance": "Yes",
+      "monthly_allowance": "£1,603",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/women-in-stem-scholarships/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "F",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "N/A",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "Scholarship application form",
+    "level": "Master",
+    "fields_of_study": [
+      "Engineering, manufacturing and construction",
+      "Natural sciences, mathematics and statistics",
+      "Information and Communication Technologies",
+      "Health and welfare"
+    ],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "fall",
+    "website": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/women-in-stem-scholarships/",
+    "duration": "12 months",
+    "Other": [
+      "Eligible countries: Brunei, Cambodia, Indonesia, Laos, Myanmar, Philippines, Singapore, Thailand, Timor-Leste.",
+      "Applicants must demonstrate financial need and plan for future contribution to their home country."
+    ]
+  },
+  {
+    "scholarship_name": "Carbon Reduction Scholarship",
+    "description": "Bursary offering a 10% reduction in fees for the MA Education for a Sustainable Environment.",
+    "important_dates": [
+      {
+        "date": "01/09/2025",
+        "description": "Decision deadline",
+        "comments": ""
+      }
+    ],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "partial",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "Yes",
+      "comments": "Automatic consideration for eligible applicants.",
+      "tuition_coverage": "N/A",
+      "travel_allowance": "N/A",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/carbon-reduction-scholarship/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "All",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "N/A",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "N/A",
+    "level": "Master",
+    "fields_of_study": [
+      "Education"
+    ],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "N/A",
+    "website": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/carbon-reduction-scholarship/",
+    "duration": "N/A",
+    "Other": [
+      "30 awards available.",
+      "Selection based on merit and potential contribution to the programme."
+    ]
+  },
+  {
+    "scholarship_name": "Engineering the Future Scholarships",
+    "description": "Awards for academically excellent international students starting postgraduate taught studies.",
+    "important_dates": [
+      {
+        "date": "31/07/2025",
+        "description": "Successful awardees announced",
+        "comments": ""
+      }
+    ],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "partial",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "Yes",
+      "comments": "No additional application needed; all offer-holders are considered based on academic merit.",
+      "tuition_coverage": "N/A",
+      "travel_allowance": "N/A",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/engineering-future-scholarships/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "2:1 or international equivalent",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "N/A",
+    "level": "Master",
+    "fields_of_study": [
+      "Engineering, manufacturing and construction",
+      "Information and Communication Technologies"
+    ],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "fall",
+    "website": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/engineering-future-scholarships/",
+    "duration": "N/A",
+    "Other": [
+      "Five awards available.",
+      "Award amount: £10,000 partial tuition fee waiver."
+    ]
+  },
+  {
+    "scholarship_name": "GREAT scholarships",
+    "description": "Scholarships for students from selected countries pursuing one-year master’s programmes.",
+    "important_dates": [
+      {
+        "date": "24/04/2025",
+        "description": "application_deadline",
+        "comments": ""
+      },
+      {
+        "date": "30/05/2025",
+        "description": "Successful applicants notified",
+        "comments": ""
+      },
+      {
+        "date": "15/06/2025",
+        "description": "Offer acceptance deadline",
+        "comments": ""
+      }
+    ],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "partial",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "Yes",
+      "comments": "Award amount: Minimum £10,000. Awarded as a tuition fee discount.",
+      "tuition_coverage": "N/A",
+      "travel_allowance": "N/A",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/great-scholarships/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "N/A",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "Scholarship application form",
+    "level": "Master",
+    "fields_of_study": [],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "fall",
+    "website": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/great-scholarships/",
+    "duration": "12 months",
+    "Other": [
+      "Eligible countries: Bangladesh, France, Greece, India, Indonesia, Nigeria, Pakistan, Thailand, Turkey, Vietnam.",
+      "Applicants must hold a conditional or unconditional offer from the University."
+    ]
+  },
+  {
+    "scholarship_name": "Manchester Humanities International Excellence Scholarship",
+    "description": "Scholarships for exceptional international students commencing postgraduate studies in the Faculty of Humanities.",
+    "important_dates": [
+      {
+        "date": "06/2025",
+        "description": "Successful applicants notified",
+        "comments": ""
+      }
+    ],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "partial",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "Yes",
+      "comments": "Awarded as a tuition fee discount. No separate application required. Total scholarship amount cannot exceed 50% of tuition fees.",
+      "tuition_coverage": "N/A",
+      "travel_allowance": "N/A",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/manchester-humanities-international-excellence-scholarship/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "N/A",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "N/A",
+    "level": "Master",
+    "fields_of_study": [
+      "Arts and humanities",
+      "Social sciences, journalism and information",
+      "Business, administration and law"
+    ],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "fall",
+    "website": "https://www.manchester.ac.uk/study/international/finance-and-scholarships/funding/manchester-humanities-international-excellence-scholarship/",
+    "duration": "N/A",
+    "Other": [
+      "Eligible students must be domiciled in specific countries.",
+      "Students must be self-funded (not sponsored)."
+    ]
+  },
+  {
+    "scholarship_name": "Equity and Merit Scholarships",
+    "description": "Scholarships for academically excellent students from the Global South.",
+    "important_dates": [],
+    "deadlines_more_details_link": "N/A",
+    "scholarship_type": "full",
+    "scholarship": {
+      "scholarship_available_for_current_intake": "No",
+      "comments": "Covers full tuition fees, return airfares (for on-campus students), living expenses, and visas.",
+      "tuition_coverage": "Yes",
+      "travel_allowance": "Yes",
+      "monthly_allowance": "N/A",
+      "installation_costs": "N/A"
+    },
+    "other_scholarships": "N/A",
+    "scholarship_more_details_link": "https://www.manchester.ac.uk/study/masters/fees-and-funding/masters-student-funding/equity-merit-scholarships/",
+    "requirements": {
+      "language_proficiency": [],
+      "gender": "Any",
+      "nationality": "N/A",
+      "GPA": "N/A",
+      "other_exams": "N/A",
+      "bachelor_requirement": "Excellent grade",
+      "letters_of_recommendation": "N/A",
+      "motivation_letter": "N/A",
+      "requirements_more_details_link": "N/A"
+    },
+    "required_documents": "N/A",
+    "level": "Master",
+    "fields_of_study": [],
+    "course_topics": [],
+    "courses_details_link": "N/A",
+    "universities": [
+      {
+        "name": "University of Manchester",
+        "country": "UK"
+      }
+    ],
+    "admission": "fall",
+    "website": "https://www.manchester.ac.uk/study/masters/fees-and-funding/masters-student-funding/equity-merit-scholarships/",
+    "duration": "N/A",
+    "Other": [
+      "Eligible countries: Ethiopia, Malawi, Rwanda, Tanzania, Uganda, Zimbabwe.",
+      "Applicants must have at least two years of professional experience."
+    ]
+  }
+]
